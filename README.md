@@ -175,5 +175,5 @@ MIT License - sinta-se livre para usar e modificar!
 
 ## 👤 Autor
 
-**Shakar**  
+**Shakarpg**  
 GitHub: [@shakarpg](https://github.com/shakarpg)
