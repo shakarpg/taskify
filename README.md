@@ -1,25 +1,34 @@
-# 📝 Taskify
+# 🚀 Taskify — Secure REST API em Go
 
-![Go Version](https://img.shields.io/badge/Go-1.22-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Build](https://github.com/shakarpg/taskify/actions/workflows/go.yml/badge.svg)
+![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat&logo=go&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat&logo=postgresql&logoColor=white)
+![JWT Auth](https://img.shields.io/badge/Auth-JWT-black?style=flat&logo=jsonwebtokens)
+![CI Build](https://github.com/shakarpg/taskify-projectgo/actions/workflows/ci.yml/badge.svg)
 
-API REST escrita em **Golang** para gerenciamento de tarefas (To-Do List), com **autenticação JWT**, **banco PostgreSQL**, e **testes automatizados**.
-
----
-
-## 🚀 Tecnologias
-
-- **Go 1.22**
-- **Chi Router** (rotas HTTP)
-- **GORM** (ORM para PostgreSQL)
-- **JWT** (autenticação)
-- **Testify** (testes unitários)
-- **Docker + Docker Compose**
-- **GitHub Actions** (CI/CD)
+API RESTful segura para gerenciamento de tarefas e projetos desenvolvida em Golang, aplicando boas práticas de arquitetura limpa, autenticação via JWT, persistência com PostgreSQL e testes automatizados.
 
 ---
 
+## 📌 Funcionalidades
+
+- 🔑 **Autenticação & Autorização**: Registro e login de usuários com hash seguro de senha (Bcrypt) e tokens JWT.
+- 📝 **Gestão de Tarefas (CRUD)**: Criação, listagem, atualização e exclusão de tarefas.
+- 🛡️ **Segurança**: Middlewares de autenticação e validação de requisições.
+- 🗄️ **Persistência Relacional**: Integração com PostgreSQL e migrações de banco de dados.
+- 🧪 **Testes Automatizados**: Suporte a testes unitários e de integração com cobertura de código.
+
+---
+
+## 🏗️ Arquitetura do Sistema
+
+graph TD
+    Client[Cliente / Frontend / Postman] -->|HTTP Request + JWT| Middleware[Auth Middleware]
+    Middleware -->|Requisição Autenticada| Handler[HTTP Handlers / Controllers]
+    Handler -->|Regras de Negócio| Service[Service / Business Layer]
+    Service -->|Acesso a Dados| Repository[Repository Layer]
+    Repository -->|SQL Queries| DB[(PostgreSQL Database)]
+
+---
 ## 🧰 Como rodar o projeto
 
 ### 1️⃣ Clone o repositório
